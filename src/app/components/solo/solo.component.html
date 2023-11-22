@@ -1,0 +1,5 @@
+<div class="container">
+    <button class="chek-btn" (click)="chek()">Проверить</button>
+    <input class="input" #siteUrl [(ngModel)]="state.siteUrl" (input)='state.setSiteUrl(siteUrl.value)' type="text">
+    <button class="add-btn" (click)="add()">Добавить</button>
+</div>

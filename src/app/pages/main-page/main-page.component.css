@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.before {
+    font-size: 18px;
+}
+
+a {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    transition: all .5s;
+}
+
+a:hover {
+    color: blue;
+}
+
+.bold {
+    font-weight: bold;
+}

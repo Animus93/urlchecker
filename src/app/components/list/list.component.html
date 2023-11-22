@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="buttons">
+        <button class="items-chek" (click)="chekList()" *ngIf="this.state.siteUrlArray.length > 0">Проверить весь
+            списока</button>
+        <button class="items-save" *ngIf="state.siteUrlArray.length" (click)="clearList()">Очистить список</button>
+    </div>
+    <div class="content">
+        <div class="item" *ngFor="let item of this.state.siteUrlArray; let i = index">
+            <button class="item__delete" (click)="deleteItem(i)"><img src="assets/delete.svg" alt="delete"></button>
+            <a class="item__url" target="_blank" href={{item.url}}>
+                {{(item.url.length > 18)? (item.url | slice:0:18)+ '...': item.url}}
+            </a>
+            <label *ngIf="item.status| async as code" [ngClass]="code !== 200?'item__status__false':'item__status__ok'">
+                <label class="item__status-text">code: </label>
+                {{code}}
+            </label>
+            <button class="item__upd" (click)="updItem(i)"><img src="assets/upd.svg" alt="refresh"></button>
+        </div>
+    </div>
+</div>
